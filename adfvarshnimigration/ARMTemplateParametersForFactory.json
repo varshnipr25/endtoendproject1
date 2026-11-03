@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfvarshnimigration"
+		},
+		"LS_SQLTOADLS_password": {
+			"value": ""
+		},
+		"LS_SQLTOADLS_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLTOADLS_properties_typeProperties_database": {
+			"value": "RetailDW"
+		},
+		"LS_SQLTOADLS_properties_typeProperties_userName": {
+			"value": "varshni"
+		}
+	}
+}
