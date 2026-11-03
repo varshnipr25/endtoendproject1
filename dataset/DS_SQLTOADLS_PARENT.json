@@ -1,0 +1,13 @@
+{
+	"name": "DS_SQLTOADLS_PARENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLTOADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

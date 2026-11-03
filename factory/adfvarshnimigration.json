@@ -1,0 +1,15 @@
+{
+	"name": "adfvarshnimigration",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "99a37ec2-6b88-4524-ab4e-65370ab45b87",
+		"tenantId": "ca6f432c-ccb0-460b-9ab0-fa2f381ddcdf"
+	}
+}

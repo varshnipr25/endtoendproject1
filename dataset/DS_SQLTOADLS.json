@@ -1,0 +1,31 @@
+{
+	"name": "DS_SQLTOADLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLTOADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Tableschema": {
+				"type": "string"
+			},
+			"Tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().Tableschema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().Tablename",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
