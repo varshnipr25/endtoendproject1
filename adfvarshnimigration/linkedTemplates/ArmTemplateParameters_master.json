@@ -8,6 +8,9 @@
 		"LS_SQLTOADLS_password": {
 			"value": ""
 		},
+		"LS_SQLTOADLSGEN2_accountKey": {
+			"value": ""
+		},
 		"LS_SQLTOADLS_properties_typeProperties_server": {
 			"value": "localhost\\SQLEXPRESS"
 		},
@@ -16,6 +19,9 @@
 		},
 		"LS_SQLTOADLS_properties_typeProperties_userName": {
 			"value": "varshni"
+		},
+		"LS_SQLTOADLSGEN2_properties_typeProperties_url": {
+			"value": "https://adlsdev25.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""

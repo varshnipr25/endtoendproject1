@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SQLTOADLS'"
 		},
+		"LS_SQLTOADLSGEN2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQLTOADLSGEN2'"
+		},
 		"LS_SQLTOADLS_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "localhost\\SQLEXPRESS"
@@ -22,6 +26,10 @@
 		"LS_SQLTOADLS_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "varshni"
+		},
+		"LS_SQLTOADLSGEN2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdev25.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -50,8 +58,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_SQLTOADLSGEN2_accountKey": {
+						"value": "[parameters('LS_SQLTOADLSGEN2_accountKey')]"
+					},
 					"LS_SQLTOADLS_password": {
 						"value": "[parameters('LS_SQLTOADLS_password')]"
+					},
+					"LS_SQLTOADLSGEN2_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQLTOADLSGEN2_properties_typeProperties_url')]"
 					},
 					"LS_SQLTOADLS_properties_typeProperties_server": {
 						"value": "[parameters('LS_SQLTOADLS_properties_typeProperties_server')]"
