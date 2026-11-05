@@ -1,0 +1,42 @@
+{
+	"name": "CHILDPIPELINE_STOREDPROCEDURE",
+	"properties": {
+		"activities": [
+			{
+				"name": "STORED_PROCEDURE",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": {
+						"value": "[dbo].[updateWatermark]",
+						"type": "Expression"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_SQLTOADLS",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Tablename": {
+				"type": "string"
+			},
+			"Tableschema": {
+				"type": "string"
+			},
+			"Watermarkcolumn": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
