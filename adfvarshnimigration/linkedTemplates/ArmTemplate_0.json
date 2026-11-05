@@ -146,6 +146,26 @@
 							"storedProcedureName": {
 								"value": "[[dbo].[updateWatermark]",
 								"type": "Expression"
+							},
+							"storedProcedureParameters": {
+								"Tableschema": {
+									"value": {
+										"value": "@pipeline().parameters.Tableschema",
+										"type": "Expression"
+									}
+								},
+								"Tablename": {
+									"value": {
+										"value": "@pipeline().parameters.Tablename",
+										"type": "Expression"
+									}
+								},
+								"Watermarkcolumn": {
+									"value": {
+										"value": "@pipeline().parameters.Watermarkcolumn",
+										"type": "Expression"
+									}
+								}
 							}
 						},
 						"linkedServiceName": {
