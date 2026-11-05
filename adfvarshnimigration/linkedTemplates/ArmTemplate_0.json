@@ -305,7 +305,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"expression": {
-								"value": "@or(equals(pipeline().parameters.LastLoadValue, null), greater(int(activity('LOOKUP_MAXVALUE').output.firstRow.MaxValue), int(pipeline().parameters.LastLoadValue)))",
+								"value": "@if(\n  empty(pipeline().parameters.LastLoadValue),\n  true,\n  greater(\n    int(activity('LOOKUP_MAXVALUE').output.firstRow.MaxValue),\n    int(pipeline().parameters.LastLoadValue)\n  )\n)",
 								"type": "Expression"
 							},
 							"ifTrueActivities": [
