@@ -561,19 +561,29 @@
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PARENT_PIPELINE",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2026-11-18T13:32:00",
+						"startTime": "2026-11-18T13:33:00",
 						"timeZone": "India Standard Time",
 						"schedule": {}
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PARENT_PIPELINE')]"
+			]
 		}
 	]
 }
