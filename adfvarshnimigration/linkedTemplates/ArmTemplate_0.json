@@ -309,7 +309,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"expression": {
-								"value": "@if(\n  empty(pipeline().parameters.LastLoadValue),\n  true,\n  greater(\n    int(activity('LOOKUP_MAXVALUE').output.firstRow.MaxValue),\n    int(pipeline().parameters.LastLoadValue)\n  )\n)",
+								"value": "@or(equals(pipeline().parameters.LastLoadValue, null), greater(int(activity('LOOKUP_MAXVALUE').output.firstRow.MaxValue), int(pipeline().parameters.LastLoadValue)))",
 								"type": "Expression"
 							},
 							"ifTrueActivities": [
@@ -555,6 +555,37 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/trigger new')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PARENT_PIPELINE",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2026-11-18T13:17:00",
+						"endTime": "2026-11-19T07:46:18",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PARENT_PIPELINE')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/trigger1')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -576,8 +607,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2026-11-18T13:33:00",
-						"timeZone": "India Standard Time",
-						"schedule": {}
+						"timeZone": "India Standard Time"
 					}
 				}
 			},
